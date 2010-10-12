@@ -1,0 +1,12 @@
+symfony Zend Framework autoloader
+=================================
+
+This autoloader class is an extension of the default sfCoreAutoload of symfony 1. It can be used to do magic autoloading of Zend Framework classes without having to manually register the Zend Framework autoloader every time you want to use a Zend Framework class. It was first presented at the International PHP Conference 2010 in Mainz. 
+
+To get this autoloader up and running, just put the class in your project's lib/ folder. Then open your ProjectConfiguration.class.php and replace the default setting up of the sfCoreAutoload with:
+
+require_once '/Users/skoop/php/full_symfony/1.4/lib/autoload/sfCoreAutoload.class.php';
+require_once dirname(__FILE__).'/../lib/myAutoload.php';
+myAutoload::register();
+
+Put the Zend Framework libraries into the lib/vendor directory of your project and you're done.
